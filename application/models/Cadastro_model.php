@@ -11,6 +11,7 @@ class Cadastro_model extends CI_Model {
     function listar() {
         $this->db->select('*');
         $this->db->from('cadastro');
+//        $this->db->where('mes',$mes);
         $this->db->order_by('ano,mes');
         $query = $this->db->get();
         return $query->result();

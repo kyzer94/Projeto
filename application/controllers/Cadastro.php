@@ -48,12 +48,12 @@ class Cadastro extends CI_Controller {
         $mes++;
         $parcAtual++;
         }
-        redirect('cadastro');
+        redirect('home');
     }
 
     public function excluir($id) {
         $this->cadastro->deletar($id);
-        redirect('cadastro');
+        redirect('home');
     }
 
     public function editar($id) {
@@ -67,7 +67,7 @@ class Cadastro extends CI_Controller {
         $data['idCadastro'] = $this->input->post('idCadastro');
         $data['nome'] = $this->input->post('nome');
         $this->cadastro->atualizar($data);
-        redirect('cadastro');
+        redirect('home');
     }
 
 }

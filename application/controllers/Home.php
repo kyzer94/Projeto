@@ -9,7 +9,7 @@ class Home extends CI_Controller {
 //        if(!$this->session->userdata('estou_logado')){
 //            redirect('login');
 //        }
-        $this->load->model('Cadastro_model', 'contatos');
+        $this->load->model('Home_model', 'home');
         //contatos é um alias para o Contatos_model 
     }
 
@@ -17,7 +17,8 @@ class Home extends CI_Controller {
         $this->load->view('template/header');
         $dados['acronico'] = "MPF";
         $dados['completo'] = "Meu Projeto Framework";
-        $dados['contatos'] = $this->contatos->listar();
+        $mes=$this->input->post('mes');
+        $dados['home'] = $this->home->listar($mes);
         $this->load->view('home', $dados);
         $this->load->view('template/footer');
     }
