@@ -18,10 +18,10 @@
                         <a class="nav-link" href="<?php echo base_url() . 'cadastro'; ?>">Cadastro</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url() . 'funcao'; ?>">Função</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'tabela'; ?>">Tebelas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url() . 'usuario'; ?>">Usuarios</a>
+                        <a class="nav-link" href="<?php echo base_url() . 'login'; ?>">login</a>
                     </li>
                     <li class="nav-item">
                         <?php if ($this->session->userdata('estou_logado')) { ?>
@@ -31,3 +31,5 @@
                 </ul>
             </div>
         </nav>
+        <br>
+        <br>

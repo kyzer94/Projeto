@@ -43,12 +43,15 @@ class Cadastro extends CI_Controller {
         $dados['parcAtual'] = $parcAtual;
         $dados['parcela'] = $parcela;
         $dados['valorTotal'] = $valorTotal;
-        $this->cadastro->inserir($dados);
+        $result = $this->cadastro->inserir($dados);
         $cont++;
         $mes++;
         $parcAtual++;
         }
-        redirect('home');
+        if($result == true){
+            $this->session->set_flashdata('sucesso','msg');
+            redirect('cadastro');
+        }
     }
 
     public function excluir($id) {
